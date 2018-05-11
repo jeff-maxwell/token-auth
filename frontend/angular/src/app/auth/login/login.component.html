@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card card-container">
+        <div class="card-header">
+            Login
+        </div>
+        <div class="card-body">
+            <img id="profile-img" class="profile-img-card" src="{{gravatar}}" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <label for="inputEmail">Email:</label>
+                <input type="text" id="inputEmail" name="email" [(ngModel)]="user.email" class="form-control" placeholder="Email address" required autofocus />
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword" name="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="login()" type="submit">Sign in</button>
+            </form>
+            <a href="/auth/forgot" class="forgot-password">Forgot the password?</a>
+            <hr>
+            <a href="/auth/signup">Setup Account</a>
+        </div>
+    </div>
+</div>
