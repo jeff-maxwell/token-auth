@@ -3,12 +3,14 @@
 This repository is a template for multiple frontends and backends to do Token Authentication.  The goal is to provide a reference architecture for Login/Logout.
 
 **Frontend Technologies:**
+
 * Angular (2+)
 * AngularJS (1.X)
 * React
 * Vue.js
 
 **Backend Technologies**
+
 * .NET Core 2
 * .NET (4.X)
 * Java
@@ -17,6 +19,7 @@ This repository is a template for multiple frontends and backends to do Token Au
 * Python
 
 **Features/Functions**
+
 * Login
 * Logout
 * Signup
