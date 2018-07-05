@@ -33,6 +33,12 @@ namespace dotnetcore.Controllers
             return await _userService.GetAll();
         }
 
+        [HttpGet("{id}")]
+        public async Task<User> GetById(string id)
+        {
+            return await _userService.GetById(id);
+        }
+
         [AllowAnonymous]
         [HttpPost("forgot")]
         public async Task<IActionResult> Forgot([FromBody]string email)
@@ -40,6 +46,8 @@ namespace dotnetcore.Controllers
             // Send an email with the following text.
             var randomKey = await _userService.SetRandomKey(email);
 
+            // Temporary Code for DEMO purposes.
+            // TODO: Create Email code
             var message = $"A request has been made to reset your password on site X.  "
                         + "If you want to reset your password click the link below and "
                         + "enter a new password:"

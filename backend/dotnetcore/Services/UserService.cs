@@ -20,7 +20,7 @@ namespace dotnetcore.Services
 
         public async Task<User> Authenticate(string email, string password)
         {
-            CheckUsers();
+            await CheckUsers();
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
                 return null;
@@ -85,12 +85,6 @@ namespace dotnetcore.Services
             return await _context.Users.FindAsync(userId);
         }
 
-        public async Task<IEnumerable<User>> GetAll()
-        {
-            await CheckUsers();
-            return await _context.Users.ToListAsync();
-        }
-
         public async Task<string> SetRandomKey(string email)
         {
             var randomKey = System.Guid.NewGuid().ToString();
@@ -131,6 +125,7 @@ namespace dotnetcore.Services
 
         public async Task<User> GetById(string userId)
         {
+            await CheckUsers();
             return await _context.Users.FindAsync(userId);
         }
 
