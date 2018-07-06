@@ -12607,11 +12607,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maxwej3/Projects/github/jeff-maxwell/spa-auth/backend/dotnetcore/dotnetcore.csproj",
+      "projectUniqueName": "/Users/maxwej3/Projects/github/jeff-maxwell/token-auth/backend/dotnetcore/dotnetcore.csproj",
       "projectName": "dotnetcore",
-      "projectPath": "/Users/maxwej3/Projects/github/jeff-maxwell/spa-auth/backend/dotnetcore/dotnetcore.csproj",
+      "projectPath": "/Users/maxwej3/Projects/github/jeff-maxwell/token-auth/backend/dotnetcore/dotnetcore.csproj",
       "packagesPath": "/Users/maxwej3/.nuget/packages/",
-      "outputPath": "/Users/maxwej3/Projects/github/jeff-maxwell/spa-auth/backend/dotnetcore/obj/",
+      "outputPath": "/Users/maxwej3/Projects/github/jeff-maxwell/token-auth/backend/dotnetcore/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

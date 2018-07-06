@@ -160,5 +160,10 @@ namespace dotnetcore.Services
 
             return true;
         }
+
+        public async Task<IEnumerable<User>> GetAll()
+        {
+            return await _context.Users.ToListAsync(); 
+        }
     }
 }
