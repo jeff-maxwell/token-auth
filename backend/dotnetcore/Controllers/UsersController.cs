@@ -28,41 +28,68 @@ namespace dotnetcore.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<User>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await _userService.GetAll();
+            try
+            {
+                return Ok(await _userService.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<User> GetById(string id)
+        public async Task<IActionResult> GetById(string id)
         {
-            return await _userService.GetById(id);
+            try
+            {
+                return Ok(await _userService.GetById(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [AllowAnonymous]
         [HttpPost("forgot")]
         public async Task<IActionResult> Forgot([FromBody]string email)
         {
-            // Send an email with the following text.
-            var randomKey = await _userService.SetRandomKey(email);
+            try
+            {
+                // Send an email with the following text.
+                var randomKey = await _userService.SetRandomKey(email);
 
-            // Temporary Code for DEMO purposes.
-            // TODO: Create Email code
-            var message = $"A request has been made to reset your password on site X.  "
-                        + "If you want to reset your password click the link below and "
-                        + "enter a new password:"
-                        + "http://localhost:4200/auth/newpassword/{randomKey}";
+                // Temporary Code for DEMO purposes.
+                // TODO: Create Email code
+                var message = $"A request has been made to reset your password on site X.  "
+                            + "If you want to reset your password click the link below and "
+                            + "enter a new password:"
+                            + "http://localhost:4200/auth/newpassword/{randomKey}";
 
-            return Ok(message);
+                return Ok(message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [AllowAnonymous]
         [HttpPost("reset")]
         public async Task<IActionResult> Reset([FromBody]ResetPasswordDto resetPasswordDto)
         {
-            var result = await _userService.Reset(resetPasswordDto);
-
-            return Ok(result);
+            try
+            {
+                var result = await _userService.Reset(resetPasswordDto);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [AllowAnonymous]
