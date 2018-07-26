@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('token-auth.view1', ['ngRoute'])
+angular.module('token-auth.home', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/home', {
