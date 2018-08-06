@@ -60,8 +60,7 @@ namespace dotnetcore.Services
 
             newUser.Email = user.Email;
             newUser.Username = user.Username;
-            newUser.FirstName = user.FirstName;
-            newUser.LastName = user.LastName;
+            newUser.Name = user.Name;
             newUser.PasswordHash = passwordHash;
             newUser.PasswordSalt = passwordSalt;
 

@@ -121,8 +121,7 @@ namespace dotnetcore.Controllers
                 return Ok(new {
                     Id = user.Id,
                     Username = user.Username,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
+                    Name = user.Name,
                     Email = user.Email,
                     Token = tokenString
                 });
