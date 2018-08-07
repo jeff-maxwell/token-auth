@@ -70,13 +70,9 @@ namespace dotnetcore.Services
             return newUser;
         }
 
-        private async Task CheckUsers()
+        public async Task<IEnumerable<User>> GetAll()
         {
-            TestData data = new TestData();
-            if (_context.Users.Count() == 0) 
-            {
-                await data.AddTestUserData(_context);
-            }
+            return await _context.Users.ToListAsync(); 
         }
 
         public async Task<User> GetUserById(string userId)
@@ -129,6 +125,15 @@ namespace dotnetcore.Services
         }
 
         // private helper methods
+        private async Task CheckUsers()
+        {
+            TestData data = new TestData();
+            if (_context.Users.Count() == 0) 
+            {
+                await data.AddTestUserData(_context);
+            }
+        }
+        
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password == null) throw new ArgumentNullException("password");
@@ -158,11 +163,6 @@ namespace dotnetcore.Services
             }
 
             return true;
-        }
-
-        public async Task<IEnumerable<User>> GetAll()
-        {
-            return await _context.Users.ToListAsync(); 
         }
     }
 }

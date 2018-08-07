@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   getGravatarImage(): void {
+    console.log('GET GRAVATAR');
     this.gravatar = 'http://www.gravatar.com/avatar/' + md5(this.user.email) + '?s=96';
   }
 
